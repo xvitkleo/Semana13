@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+.flex {
+    display: flex;
+}
+
+body {
+    position: relative;
+}
+header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, calc(20vw - 1.5rem));
+    grid-template-rows: repeat(2, calc(50vh - 3.7rem));
+    gap: 1rem;
+    margin: 1rem 1.5rem 1rem 1.5rem;
+    overflow: hidden;
+
+}
+.mascota {
+    border: solid 1.5px rgba(128, 128, 128, 0.616);
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    margin: 0rem 1rem 0rem 1rem;
+
+    &:hover {
+        transition: box-shadow 1s ease;
+        box-shadow: 0 0 5px;
+        .mascota_modifiers {
+            transition: opacity 1s ease;
+            opacity: 100%;
+        }
+    }
+    .mascota_modifiers {
+        opacity: 0%;
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0.8rem;
+        cursor: pointer;        
+        color: gray;
+        i {
+            height: 1rem;
+            width: 1rem;
+            overflow: hidden;
+            border: solid transparent 0.2px;
+        }
+        .fa-pen {
+            font-size: 1rem;
+        }
+        .fa-times {
+            font-size: 1.1rem;
+        }
+        p {
+            font-size: 0.8rem;
+        }
+    }
+    figure {        
+        margin: auto auto 0.5rem auto;
+        border-radius: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        height: 40%;
+        width: 50%;  
+        position: relative;
+        img {
+            top: -20%;
+            position: absolute;
+            height: 150%;
+            width: 100%;   
+        }
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    p {
+        margin: 0.5rem;
+    }
+    p:nth-child(5) {
+        font-size: 1rem;
+        overflow-y: scroll;
+        height: 5rem;
+    }
+    
+}
+
+.agregar-mascota, .editar-mascota {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(128, 128, 128, 0.363);    
+    display: flex;
+    form {
+        background-color: white;        
+        margin: auto;
+        padding: 1rem;
+        width: 30vw;
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        h2 {
+            border: none;
+            font-weight: lighter;
+        }
+        * {
+            border: solid 0.5px rgba(128, 128, 128, 0.479);
+            border-radius: 5px;
+            margin: 0.5rem;
+            padding: 0.5rem;
+        }
+    }
+    
+
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(128, 128, 128, 0.363);
+    display: grid;
+    justify-content: center;
+    align-items: center;    
+    .modal_vista {
+        height: 30vh;
+        width: 40vw;
+        padding-top: 15%;
+        text-align: center;
+        background-color: white;
+        position: relative;
+        .fa-times {
+            margin: 0.7rem;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        p {
+            font-size: 1rem;         
+        }
+        div {
+            margin-top: 10%;
+            display: flex;
+            justify-content: space-evenly;
+
+            button {
+                background-color: #C4C4C4;
+                border: none;
+                width: 30%;
+                height: 1.6rem;
+            }
+        }
+    }
+}
+
+
+ /// estructura html de mascota
+/*<div class="mascota">  
+    <figure><img src="https://s3-alpha-sig.figma.com/img/f84c/f136/e7786c4fb5773c3ca44593171525fc78?Expires=1584316800&Signature=b1kw55cQN~8lLfayHxx97rAABsgxGImRmUlN7Ac19O43Ek7InLeC3gf5bNOJC~et-0eQqO-ILPF4urhS65X0W3diJUvodDlL5YE9IDT2lnS~cck5xXrYq18Lji0s-vjPcqaiYDbX3RGoXB5mmRcAK9I0crcGnDFovwjtz3AWQdCXZVUCW8orf9AsxNTbrAo1ia0JWxu77jQj41KAAGbEnfmdt97rCKnKJbN~0SntSzI6Hx7qucfqWvTQFTQ9pJXP1L21lhiIIKMn-5294-hKulRpcRMCNDyEDB1xU1ZZIRsmI0D-GyPWC2m8wgfZRJ3wYoTfQh7xYZF7SlCs6FpkZQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" alt=""></figure>              
+    <h2>Nombre</h2>
+    <p>Telefono</p>
+    <p>Correo</p>
+    <p>Pais</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum in, labore id aperiam numquam, pariatur, eius culpa repellendus molestias vel tenetur.</p>
+    <div class="mascota_modifiers">
+        <div class="edit">
+            <i class="fas fa-pen"></i>
+            <p>Edit</p>
+        </div>
+        <div class="delete">
+            <i class="fas fa-times"></i>
+            <p>Delete</p>
+        </div>
+    </div>                
+</div>  */
